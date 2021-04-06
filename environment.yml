@@ -15,6 +15,7 @@ dependencies:
   - tqdm
   - urllib3
   - pip:
+    - datadog
     - hvac
     - pre_commit
     - pyathena

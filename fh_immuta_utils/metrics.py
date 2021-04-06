@@ -8,7 +8,9 @@ options = {
 
 initialize(**options)
 
-while(1):
-    statsd.increment('test.increment', tags=["environment:dev"])
-    statsd.decrement('test.decrement', tags=["environment:dev"])
-    time.sleep(10)
+
+def test_metrics():
+    while(1):
+        statsd.increment('test.increment', tags=["environment:dev"])
+        statsd.decrement('test.decrement', tags=["environment:dev"])
+        time.sleep(10)

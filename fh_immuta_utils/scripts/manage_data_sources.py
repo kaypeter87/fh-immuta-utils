@@ -33,7 +33,6 @@ from fh_immuta_utils.data_source import (
     SchemaEvolutionMetadata,
     blob_handler_type,
 )
-from fh_immuta_utils.metrics import test_metrics
 
 if TYPE_CHECKING:
     from fh_immuta_utils.client import ImmutaClient
@@ -126,8 +125,6 @@ def main(config_file: str, glob_prefix: str, debug: bool, dry_run: bool) -> bool
             for table in failed_tables:
                 LOGGER.warning(table)
 
-    LOGGER.info("Sending Metrics...")
-    test_metrics()
     LOGGER.info("Finished enrollment")
     return no_enrollment_errors
 

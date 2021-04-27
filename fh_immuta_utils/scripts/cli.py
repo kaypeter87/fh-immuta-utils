@@ -21,7 +21,7 @@ data_source_cli.add_command(manage_data_sources_command, "manage")
 data_source_cli.add_command(tag_existing_data_sources_command, "tag-existing")
 main_cli.add_command(data_source_cli, "data-source")
 main_cli.add_command(manage_policies_command, "policies")
-main_cli.add_command(metrics, "metrics")
+main_cli.add_command(metrics, "test_metrics")
 
 if __name__ == "__main__":
     main_cli()

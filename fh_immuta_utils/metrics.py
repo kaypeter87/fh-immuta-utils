@@ -2,7 +2,8 @@ from datadog import initialize, statsd
 import time
 import os
 
-
+# This env var is to get the IP of the kubernetes host
+# It assumes this env var is set in a container
 DD_AGENT_IP = os.getenv('DD_AGENT_IP')
 
 options = {
@@ -18,3 +19,7 @@ def test_metrics():
         statsd.increment('immuta_test.increment', tags=["environment:dev"])
         statsd.decrement('immuta_test.decrement', tags=["environment:dev"])
         time.sleep(10)
+
+
+def data_source_metrics():
+

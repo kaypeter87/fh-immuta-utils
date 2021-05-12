@@ -1,7 +1,12 @@
 # Build container conda env
 FROM python:3.7
 
-ENV LIBRARY_VERSION 0.5.0
-RUN pip install "fh-immuta-utils==${LIBRARY_VERSION}"
+WORKDIR fh_immuta_utils
+
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
 
 ENTRYPOINT "fh-immuta-utils"
